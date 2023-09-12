@@ -1,6 +1,13 @@
 ![logo](./logo.png)
-[![Greenkeeper badge](https://badges.greenkeeper.io/postlight/serverless-typescript-starter.svg)](https://greenkeeper.io/)
-[![CircleCI](https://circleci.com/gh/postlight/serverless-typescript-starter/tree/master.svg?style=svg)](https://circleci.com/gh/postlight/serverless-typescript-starter/tree/master)
+## Forked from Postlight
+Main changes:
+- Updated date: 2023-09-12
+- AWS nodejs lambda runtime: nodejs18.x 
+- Serverless framework v3
+- Webpack v5, ts-loader v9, TypeScript v4.9.5
+- Switch to npm as packager
+- Husky v8
+- Bump all other dependencies to their latest version
 
 [Postlight](https://postlight.com)'s Modern Serverless Starter Kit adds a light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack, TypeScript if you want it, testing with Jest, linting with ESLint, and formatting with Prettier), the ease and power of Serverless, and a few handy helpers (like functions for handling warm functions and response helpers).
 
@@ -14,16 +21,16 @@ Note: Currently, this starter kit specifically targets AWS.
 
 ```bash
 # If you don't already have the serverless cli installed, do that
-yarn global add serverless
+npm install -g serverless
 
 # Use the serverless cli to install this repo
-serverless install --url https://github.com/postlight/serverless-typescript-starter --name <your-service-name>
+serverless install --url https://github.com/wei2much/serverless-typescript-starter --name <your-service-name>
 
 # cd into project and set it up
 cd <your-service-name>
 
 # Install dependencies
-yarn install
+npm install
 ```
 
 ## Development
@@ -59,7 +66,7 @@ You can develop and test your lambda functions locally in a few different ways.
 To run the hello function with the event data defined in [`fixtures/event.json`](fixtures/event.json) (with live reloading), run:
 
 ```bash
-yarn watch:hello
+npm run watch:hello
 ```
 
 ### API Gateway-like local dev server
@@ -67,7 +74,7 @@ yarn watch:hello
 To spin up a local dev server that will more closely match the API Gateway endpoint/experience:
 
 ```bash
-yarn serve
+npm run serve
 ```
 
 ### Test your functions with Jest
@@ -76,7 +83,7 @@ Jest is installed as the testrunner. To create a test, co-locate your test with 
 as `<filename>.test.ts` and then run/watch tests with:
 
 ```bash
-yarn test
+npm run test
 ```
 
 ### Adding new functions/files to Webpack
@@ -176,7 +183,7 @@ In `serverless.yml`:
 ```yaml
 provider:
   name: ${env:NAME}
-  runtime: nodejs12.x
+  runtime: nodejs18.x
 ```
 
 You can check the documentation [here](https://www.npmjs.com/package/serverless-dotenv-plugin).
@@ -186,18 +193,18 @@ You can check the documentation [here](https://www.npmjs.com/package/serverless-
 Assuming you've already set up your default AWS credentials (or have set a different AWS profile via [the profile field](serverless.yml#L25)):
 
 ```bash
-yarn deploy
+npm run deploy
 ```
 
 `yarn deploy` will deploy to "dev" environment. You can deploy to `stage` or `production`
 with:
 
 ```bash
-yarn deploy:stage
+npm run deploy:stage
 
 # -- or --
 
-yarn deploy:production
+npm run deploy:production
 ```
 
 After you've deployed, the output of the deploy script will give you the API endpoint
