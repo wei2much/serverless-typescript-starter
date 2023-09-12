@@ -42,11 +42,6 @@
     "webpack": "^5.88.2",
     "webpack-node-externals": "^3.0.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && yarn test"
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,ts}": [
       "yarn lint",
