@@ -24,7 +24,7 @@ package:
 
 provider:
   name: aws
-  runtime: nodejs16.x
+  runtime: nodejs18.x
   # you can overwrite defaults here
   #  stage: dev
   #  region: us-east-1
@@ -38,7 +38,7 @@ custom:
   webpack:
     webpackConfig: ./webpack.config.js
     includeModules: true
-    packager: 'yarn' # Packager that will be used to package your external modules
+    packager: 'npm' # Packager that will be used to package your external modules
     excludeFiles: src/**/*.test.[t|j]s # Exclude test files
   warmup:
     enabled: true
