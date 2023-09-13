@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "deploy:env": "sls deploy --stage $NODE_ENV",
-    "deploy": "export NODE_ENV=dev && yarn deploy:env",
-    "deploy:production": "export NODE_ENV=production && yarn deploy:env",
-    "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
+    "deploy": "export NODE_ENV=dev && npm run deploy:env",
+    "deploy:production": "export NODE_ENV=production && npm run deploy:env",
+    "deploy:stage": "export NODE_ENV=stage && npm run deploy:env",
     "lint": "eslint src --ext ts,js --no-ignore --fix",
     "serve": "sls offline",
     "serve:watch": "nodemon -e js,ts,jsx,tsx -x yarn serve",
