@@ -1,13 +1,14 @@
 ![logo](./logo.png)
-## Forked from Postlight
+## Forked from Postlight for personal projects
 Main changes:
-- Updated date: 2023-09-12
+- Updated date: 2023-09-20
 - AWS nodejs lambda runtime: nodejs18.x 
 - Serverless framework v3
 - Webpack v5, ts-loader v9, TypeScript v4.9.5
 - Switch to npm as packager
 - Husky v8
 - Bump all other dependencies to their latest version
+- Remove CircleCI configs
 
 [Postlight](https://postlight.com)'s Modern Serverless Starter Kit adds a light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack, TypeScript if you want it, testing with Jest, linting with ESLint, and formatting with Prettier), the ease and power of Serverless, and a few handy helpers (like functions for handling warm functions and response helpers).
 
@@ -31,6 +32,12 @@ cd <your-service-name>
 
 # Install dependencies
 npm install
+
+# Prepare husky git hooks
+npm run prepare-husky
+
+# If the starter is being used as a npm workspace, better to remove husky related directories and let the top level hook manage it
+npm run remove-husky-from-workspace
 ```
 
 ## Development
