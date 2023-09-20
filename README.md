@@ -38,6 +38,12 @@ npm run prepare-husky
 
 # If the starter is being used as a npm workspace, better to remove husky related directories and let the top level hook manage it
 npm run remove-husky-from-workspace
+
+# Add any changes to the commit
+git add .
+
+# Add commit message
+git commit -m "initialise project repo"
 ```
 
 ## Development
